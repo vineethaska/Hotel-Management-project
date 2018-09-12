@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script>
+            function submit(){
+                var uname=Document.getElementById("uname").value;
+                var password=Document.getElementById("pswd").value;
+           if(uname=="")
+            {
+                alert("please enter the name");
+              
+            }
+            else if(password="")
+            {
+                alert("please enter the password");
+            }
+            else
+            {
+                document.getElementById("aska").submit;
+            }
+            }        
+        </script>
+    </head>
+    <body>
+    <center>
+        <form action="login.php" method="post" id="aska">
+        user name:<input type="text" name="username" id="uname" placeholder="username"/><br><br>
+        password:<input type="password" name="password" id="pswd" placeholder="password"/><br><br>
+
+        <button value="submit"> login</button>
+    </center>
+    </body>
+</html>

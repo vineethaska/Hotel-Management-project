@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>REGISTRATION FORM</title>
+      <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+.createbox p{
+    margin: 0;
+    padding: 0 0 20px;
+    font-weight: bold;
+    color: #fff;
+}
+.createbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.createbox input[type="text"],
+.createbox input[type="password"]{
+        border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 15px;
+    color: #fff;
+    font-size: 16px;
+
+}
+::placeholder{
+        color: rgba(255,255,255,0.5);
+
+}
+.createbox input[type="submit"]{
+    border: none;
+    color: #fff;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background: lightcoral;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.createbox input[type="submit"]:hover{
+    background: #efed40;
+    color: #262626;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#frame {
+            width: 500px;
+            margin: auto;
+            margin-top: 125px;
+            border: solid 1px #CCC; /* SOME CSS3 DIV SHADOW */
+            -webkit-box-shadow: 0px 0px 10px #CCC;
+            -moz-box-shadow: 0px 0px 10px #CCC;
+            box-shadow: 0px 0px 10px #CCC; /* CSS3 ROUNDED CORNERS */
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            border-radius: 5px;
+            background-color: whitesmoke;
+            opacity:0.8;
+        }
+        
+h1 {
+    font-size: 40px;
+    font-style: italic;
+}
+li a:hover {
+    background-color: #111;
+}
+body  {
+    background-image: url("Restaurants-in-Hyderabad.jpg");
+    background-size:cover;
+}
+
+    
+       
+    
+       
+    
+</style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function submitform(){
+               
+               
+                var email=document.getElementById("email").value
+                var emPatt=/^([a-z]{6,20}|[A-Z]{6,20})[0-9]{0,}\@[a-z]{5,}\.[a-z]{3,}$/;
+                if(!email.match(emPatt))
+                     alert("Please enter valid email");
+            else       
+            document.getElementById("sub").disabled=false;
+               
+            }
+            function subform(){ 
+                var mbno=document.getElementById("mbno").value;
+                 var mbPatt=/^[6-9]{1}[0-9]{9}$/;
+                    if(!mbno.match(mbPatt)){
+                    alert("Please enter valid mbno");
+                    document.getElementById("sub").disabled=true;
+               }
+           }
+        </script>    
+    </head>
+    <body>
+        <br><br><br>
+         <ul>
+  <li><a class="active" href="home.html">HOME</a></li>
+  <li><a href="rooms.html">ROOMS</a></li>
+  <li><a href="bars.html">BARS</a></li> 
+  <li><a href="takeaway.html">TAKE AWAY</a></li>
+  <li><a href ="contact.html">CONTACTS</a></li>
+
+
+</ul>
+    <center>
+        <h1>BOOK A ROOM</h1>
+        
+        <form action="php.php" method="POST" id="aska" enctype="multipart/form-data">
+            
+            first name: <input type="text" name="fname" id="fname" required/><br><br>
+          last name : <input type="text" name="lname" id="lname" required/><br><br>
+            mobile No:<input type="text" name="mbNo" id="mbno" onchange='subform()' required/><br><br>
+            email: <input type="email" name="email" id="email" onchange='submitform()' required/><br><br>
+            date:<input type="date" name="date" id='dates' required> <br><br>
+           adults:<select name="adults" id="adlt" required>
+               <option value="">Select</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4 </option>
+           </select>
+            child:<select name="childs" id="chld" required>
+               <option value="">Select</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+              
+              
+            
+           </select>    <br><br>
+
+           <input type="submit" id='sub' value='register'>
+           </form>
+    </center>
+   
+    </body>
+</html>
+
